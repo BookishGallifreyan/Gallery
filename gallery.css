@@ -1,0 +1,16 @@
+.imagelist {
+  height: 20vh;
+  display: flex;
+}
+.thumb-img {
+  width: auto;
+  height: 15vh;
+}
+
+.main-pic {
+  height: 50vh;
+  width: auto;
+}
+#announcer {
+  visibility: hidden;
+}
