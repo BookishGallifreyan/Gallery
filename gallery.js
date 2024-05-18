@@ -40,20 +40,20 @@ nextBtn.addEventListener("click", function () {
 });
 
 function selectPicBasedOnIndex(newIndexValue) {
-  currentPic = currentPic + newIndexValue;
+  currentPicBe = currentPicBe + newIndexValue;
 
-  if (currentPic > minsterpics.length - 1) {
-    currentPic = 0;
+  if (currentPicBe > minsterpics.length - 1) {
+    currentPicBe = 0;
   }
-  if (currentPic < 0) {
-    currentPic = minsterpics.length - 1;
+  if (currentPicBe < 0) {
+    currentPicBe = minsterpics.length - 1;
   }
-  createDisplayImg(minsterpics[currentPic]);
+  createDisplayImg(minsterpics[currentPicBe]);
 }
 
 function createPicList(minsterpics) {
   for (let i = 0; i < minsterpics.length; i++) {
-    let = img = document.createElement("img");
+    let img = document.createElement("img");
 
     img.src = minsterpics[i].url;
     img.alt = minsterpics[i].alt;
@@ -65,20 +65,23 @@ function createPicList(minsterpics) {
     img.addEventListener("click", function () {
       console.log(minsterpics[i]);
       currentPic = i;
-      console.log(currentPic);
+      console.log(currentPicBe);
       createDisplayImg(minsterpics[i]);
     });
+
+    imagelist.appendChild(img);
   }
 }
 
 createPicList(minsterpics);
 
 function createDisplayImg(PicObj) {
+  const aria = document.getElementById("aria");
   aria.textContent = PicObj.alt;
-  displayImg.innerHTML = "";
+  showpic.innerHTML = "";
   let imgTag = document.createElement("img");
   imgTag.classList.add("main-pic");
   imgTag.src = PicObj.url;
   imgTag.alt = PicObj.alt;
-  displayImg.appendChild(imgTag);
+  showpic.appendChild(imgTag);
 }

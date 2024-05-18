@@ -8,9 +8,13 @@
 }
 
 .main-pic {
-  height: 50vh;
+  height: 70vh;
   width: auto;
 }
 #announcer {
   visibility: hidden;
+}
+:focus {
+  border-style: solid;
+  border-color: cyan;
 }
